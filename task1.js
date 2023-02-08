@@ -1,1 +1,22 @@
-// task1
+const countries = [
+  "United States",
+  "China",
+  "India",
+  "Indonesia",
+  "Brazil",
+  "Pakistan",
+  "Nigeria",
+  "Bangladesh",
+  "Russia",
+  "Mexico",
+  "Japan",
+  "Philippines",
+  "Vietnam",
+  "Ethiopia",
+  "Egypt",
+  "Iran",
+  "Turkey",
+  "Democratic Republic of the Congo",
+  "Thailand",
+  "Myanmar",
+];
