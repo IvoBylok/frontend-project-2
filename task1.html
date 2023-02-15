@@ -12,6 +12,8 @@
   <body>
     <script>
       let addCountr = false;
+      let remCountr = false;
+      let remPoz = 0;
       const countries = [
         "United States",
         "China",
@@ -34,6 +36,7 @@
         "Thailand",
         "Myanmar",
       ];
+      // FUNCTION checkCountry**************************************
       function checkCountry(country, countries) {
         if (typeof country == "string") {
           if (country.length > 0) {
@@ -47,7 +50,8 @@
                     i +
                     "."
                 );
-
+                remCountr = true;
+                remPoz = i;
                 return;
               }
             }
@@ -71,7 +75,34 @@
           return;
         }
       }
-      function addCountry(country, countries) {}
+      // FUNCTION addCountry**************************************
+      function addCountry(country, countries) {
+        countries.push(country);
+        console.log(
+          "Zadaná krajina " +
+            country +
+            " byla úspěšně přidaná do seznamu krajin na indexu " +
+            (countries.length - 1) +
+            "."
+        );
+        console.log(
+          "Celkový počet krajin v seznamu je " + countries.length + "."
+        );
+      }
+      // FUNCTION removeCountry**************************************
+      function removeCountry(country, countries) {
+        countries.splice(remPoz, 1);
+        console.log(
+          "Zadaná krajina " +
+            country +
+            " byla odstraněna ze seznamu krajin na indexu " +
+            remPoz +
+            "."
+        );
+        console.log(
+          "Celkový počet krajin v seznamu je " + countries.length + "."
+        );
+      }
       // Projekt č.2: Zadání projektu - část pole, PRVNÍ část
       // Pro kontrolu správnosti zavolej funkci s parametry:
       // checkCountry("Germany", countries);
@@ -100,7 +131,9 @@
       console.log(
         "==============================================================="
       );
-
+      // kontrolní výpis pole
+      console.log(countries);
+      // ********************
       // Projekt č.2: Zadání projektu - část pole, DRUHÁ část
       // Pro kontrolu správnosti zavolej následující funkci s parametry
       // addCountry("Vietnam", countries);
@@ -113,7 +146,7 @@
       );
       addCountr = false;
       checkCountry("Vietnam", countries);
-      if ((addCountr = true)) {
+      if (addCountr) {
         addCountry("Vietnam", countries);
       }
       console.log(
@@ -121,7 +154,7 @@
       );
       addCountr = false;
       checkCountry("Mexico", countries);
-      if ((addCountr = true)) {
+      if (addCountr) {
         addCountry("Mexico", countries);
       }
       console.log(
@@ -129,7 +162,7 @@
       );
       addCountr = false;
       checkCountry("Poland", countries);
-      if ((addCountr = true)) {
+      if (addCountr) {
         addCountry("Poland", countries);
       }
       console.log(
@@ -137,12 +170,64 @@
       );
       addCountr = false;
       checkCountry("", countries);
-      if ((addCountr = true)) {
+      if (addCountr) {
         addCountry("", countries);
       }
       console.log(
         "==============================================================="
       );
+      // kontrolní výpis pole
+      console.log(countries);
+      // ********************
+      // Projekt č.2: Zadání projektu - část pole, TŘETÍ část
+      // Pro kontrolu správnosti zavolej následující funkci s parametry
+      // removeCountry("", countries);
+      // removeCountry("Vietnam", countries);
+      // removeCountry("Laos", countries);
+      // removeCountry("Thailand", countries);
+      console.log("TŘETÍ část");
+      console.log(
+        "==============================================================="
+      );
+      remPoz = 0;
+      remCountr = false;
+      checkCountry("", countries);
+      if (remCountr) {
+        removeCountry("", countries);
+      }
+      console.log(
+        "==============================================================="
+      );
+      remPoz = 0;
+      remCountr = false;
+      checkCountry("Vietnam", countries);
+      if (remCountr) {
+        removeCountry("Vietnam", countries);
+      }
+      console.log(
+        "==============================================================="
+      );
+      remPoz = 0;
+      remCountr = false;
+      checkCountry("Laos", countries);
+      if (remCountr) {
+        removeCountry("Laos", countries);
+      }
+      console.log(
+        "==============================================================="
+      );
+      remPoz = 0;
+      remCountr = false;
+      checkCountry("Thailand", countries);
+      if (remCountr) {
+        removeCountry("Thailand", countries);
+      }
+      console.log(
+        "==============================================================="
+      );
+      // kontrolní výpis pole
+      console.log(countries);
+      // ********************
     </script>
   </body>
 </html>
