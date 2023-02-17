@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2-html</title>
+    <!-- Ivo Bylok -->
+    <!-- IvoB -->
+    <!-- ivo@bylok.cz -->
+  </head>
+  <body>
+    <script>
+      // Obecná funkce pro výpočet procentního podílu populace státu na celkové populaci
+      function zaokrouhliNaDesetinneMisto(procPod, pocetMist) {
+        pocetMist = Math.pow(10, pocetMist);
+        procPod = procPod * pocetMist;
+        procPod = Math.round(procPod);
+        procPod = procPod / pocetMist;
+        return procPod;
+      }
+      function percentageOfPopulation(population, populationTotal) {
+        procPod = population / (populationTotal / 100);
+      }
+      // Zadání objektu
+      const countriesPopulation = [
+        { country: "China", population: 1439323776 },
+        { country: "India", population: 1379302771 },
+        { country: "USA", population: 331002651 },
+        { country: "Indonesia", population: 269603400 },
+        { country: "Pakistan", population: 220892340 },
+        { country: "Bangladesh", population: 164970459 },
+        { country: "Japan", population: 126451398 },
+        { country: "Philippines", population: 109581078 },
+        { country: "Vietnam", population: 97338579 },
+        { country: "Turkey", population: 84339642 },
+      ];
+      // Kontrolní výpis zadaného objektu
+      console.log(countriesPopulation);
+      // Zadání celkové populace
+      const populationTotal = 8000000000;
+      // Vytvoření klonu objektu
+      const copyCountries = JSON.parse(JSON.stringify(countriesPopulation));
+      // Setřídění (vzestupně) států dle výše populace
+      copyCountries.sort(function (a, b) {
+        return a.population - b.population;
+      });
+      // Kontrolní výpis setříděného pole
+      console.log(copyCountries);
+      //
+      // ???????
+      // Výpočet procentního podílu populace státu na celkové populaci
+      percentageOfPopulation(1439323776, populationTotal);
+      procPod = zaokrouhliNaDesetinneMisto(procPod, 2);
+      // Kontrolní výpis výpočtu procentního podílu populace
+      console.log(procPod);
+    </script>
+  </body>
+</html>
