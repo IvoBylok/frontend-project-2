@@ -60,7 +60,9 @@
       }
       //Doplnění nové vlastnosti id do pole klonu
       console.log("==============================");
-      console.log("Doplnění nové vlastnosti id");
+      console.log(
+        "Kontrolní výpis - doplnění nové vlastnosti id do pole klonu"
+      );
       for (let i = 0; i < copyCountries.length; i++) {
         copyCountries[i].id =
           copyCountries[i].country[0] + // dá se to napsat v cyklu, ale takhle mi to přijde přehlednější...
@@ -70,10 +72,12 @@
         //Kontrolní výpis doplněného pole o id.
         console.log(copyCountries[i]);
       }
-      //Doplnění další vlastnosti o percentage.
+      //Doplnění další vlastnosti percentage do pole klonu
       //Dalo se řešit v rámci předešlého for, takto jsem zvolil opět kvůli přehlednosti.
       console.log("==============================");
-      console.log("Doplnění nové vlastnosti percentage");
+      console.log(
+        "Kontrolní výpis - doplnění nové vlastnosti percentage do pole klonu"
+      );
       for (let i = 0; i < copyCountries.length; i++) {
         percentageOfPopulation(copyCountries[i].population, populationTotal);
         procPod = zaokrouhliNaDesetinneMisto(procPod, 2);
@@ -82,26 +86,25 @@
         console.log(copyCountries[i]);
       }
       //Naplnění nového pole objekty splňujícími zadané podmínky
-      console.log("==============================");
-      console.log("Doplnění nového pole objekty splňujícím zadané podmínky");
       for (let i = 0; i < copyCountries.length; i++) {
         if (
           copyCountries[i].country.length > 4 &&
           copyCountries[i].country.length <= 8
         ) {
-          console.log(copyCountries[i]);
-          console.log(copyCountries[i].country.length);
-          newArray.push(copyCountries[i]);
+          if (
+            copyCountries[i].percentage > 1.5 &&
+            copyCountries[i].percentage < 10
+          ) {
+            newArray.push(copyCountries[i]);
+          }
         }
       }
-      //Kontrolní výpis nového pole naplněného objekty splˇnujícími podmínky
+      //Kontrolní výpis nového pole naplněného objekty splňujícími podmínky
       console.log("==============================");
       console.log(
         "Kontrolní výpis nového pole naplněného objekty splňujícími podmínky"
       );
-      console.log(newArray);
       for (let i = 0; i < newArray.length; i++) {
-        console.log(newArray.length);
         console.log(newArray[i]);
       }
       //
