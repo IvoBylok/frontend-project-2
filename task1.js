@@ -100,9 +100,6 @@ checkCountry(1000, countries);
 console.log("===============================================================");
 checkCountry("", countries);
 console.log("===============================================================");
-// kontrolní výpis pole
-console.log("Kontolní výpis pole countries.");
-console.log(countries);
 // ********************
 // Projekt č.2: Zadání projektu - část pole, DRUHÁ část
 // Pro kontrolu správnosti zavolej následující funkci s parametry
@@ -137,9 +134,6 @@ if (addCountr) {
   addCountry("", countries);
 }
 console.log("===============================================================");
-// kontrolní výpis pole
-console.log("Kontolní výpis pole countries.");
-console.log(countries);
 // ********************
 // Projekt č.2: Zadání projektu - část pole, TŘETÍ část
 // Pro kontrolu správnosti zavolej následující funkci s parametry
