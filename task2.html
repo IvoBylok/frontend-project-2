@@ -12,6 +12,10 @@
   <body>
     <script>
       // Obecná funkce pro výpočet procentního podílu populace státu na celkové populaci
+      function percentageOfPopulation(population, populationTotal) {
+        procPod = population / (populationTotal / 100);
+      }
+      // Funkce pro zaokrouhlení výsledku výpočtu procentního podílu na 2 des.místa
       function zaokrouhliNaDesetinneMisto(procPod, pocetMist) {
         pocetMist = Math.pow(10, pocetMist);
         procPod = procPod * pocetMist;
@@ -19,10 +23,9 @@
         procPod = procPod / pocetMist;
         return procPod;
       }
-      function percentageOfPopulation(population, populationTotal) {
-        procPod = population / (populationTotal / 100);
-      }
-      // Zadání pole objektů
+      // Definování nového pole pro podmínečný výběr (poslední krok úlohy)
+      const newArray = [];
+      // Definování pole objektů
       const countriesPopulation = [
         { country: "China", population: 1439323776 },
         { country: "India", population: 1379302771 },
@@ -35,19 +38,27 @@
         { country: "Vietnam", population: 97338579 },
         { country: "Turkey", population: 84339642 },
       ];
-      // Kontrolní výpis zadaného objektu
-      console.log(countriesPopulation);
+      // Kontrolní výpis definovaného pole objektů
+      console.log("==============================");
+      console.log("Kontrolní výpis definovaného pole objektů");
+      for (let i = 0; i < countriesPopulation.length; i++) {
+        console.log(countriesPopulation[i]);
+      }
       // Zadání celkové populace
       const populationTotal = 8000000000;
       // Vytvoření klonu pole objektů
       const copyCountries = JSON.parse(JSON.stringify(countriesPopulation));
-      // Setřídění (vzestupně) států dle výše populace
+      // Setřídění pole klonu (vzestupně) států dle výše populace
       copyCountries.sort(function (a, b) {
         return a.population - b.population;
       });
-      // Kontrolní výpis setříděného pole
-      console.log(copyCountries);
-      //Doplnění nové vlastnosti id
+      // Kontrolní výpis setříděného pole klonu
+      console.log("==============================");
+      console.log("Kontrolní výpis setřiděného pole klonu");
+      for (let i = 0; i < copyCountries.length; i++) {
+        console.log(copyCountries[i]);
+      }
+      //Doplnění nové vlastnosti id do pole klonu
       console.log("==============================");
       console.log("Doplnění nové vlastnosti id");
       for (let i = 0; i < copyCountries.length; i++) {
@@ -70,38 +81,30 @@
         //Kontrolní výpis doplněného pole o percentage.
         console.log(copyCountries[i]);
       }
+      //Naplnění nového pole objekty splňujícími zadané podmínky
+      console.log("==============================");
+      console.log("Doplnění nového pole objekty splňujícím zadané podmínky");
+      for (let i = 0; i < copyCountries.length; i++) {
+        if (
+          copyCountries[i].country.length > 4 &&
+          copyCountries[i].country.length <= 8
+        ) {
+          console.log(copyCountries[i]);
+          console.log(copyCountries[i].country.length);
+          newArray.push(copyCountries[i]);
+        }
+      }
+      //Kontrolní výpis nového pole naplněného objekty splˇnujícími podmínky
+      console.log("==============================");
+      console.log(
+        "Kontrolní výpis nového pole naplněného objekty splňujícími podmínky"
+      );
+      console.log(newArray);
+      for (let i = 0; i < newArray.length; i++) {
+        console.log(newArray.length);
+        console.log(newArray[i]);
+      }
       //
-      //
-      //zkoušení
-      const mojePole = { jmeno: "Ivo", vek: 60 };
-      console.log(mojePole);
-      mojePole.pohlavi = "zrzave";
-      console.log(mojePole);
-      //
-
-      // ???????
-      // var pole = {
-      //    1:{a:'A1',b:'B1',c:'C1'},
-      //    2:{a:'A2',b:'B2',c:'C2'},
-      //   }
-      // ODPOVĚĎ:
-      //Problém je, že to není pole. Je to objekt.
-      //Do objektu se dá přidávat pomocí
-      //pole[5] = xxxx pokud se jedná o číselný index, nebo
-      //pole.nazev = xxx pokud se jedná o řetězec
-      //Pole je
-      //var pole = [ {a:'A1',b:'B1',c:'C1'},{a:'A2',b:'B2',c:'C2'} ]
-      //a tam se pak dají použít další metody, které pracují jen s poli, jako pole.push(xxx) atd.
-      //var pole = [ {a:'A1',b:'B1',c:'C1'},{a:'A2',b:'B2',c:'C2'} ]
-      //a potom volat pole.push({a:'A3',b:'B3',c:'C3'})
-
-      //
-      //
-      // Výpočet procentního podílu populace státu na celkové populaci
-      percentageOfPopulation(1439323776, populationTotal);
-      procPod = zaokrouhliNaDesetinneMisto(procPod, 2);
-      // Kontrolní výpis výpočtu procentního podílu populace
-      console.log(procPod);
     </script>
   </body>
 </html>
