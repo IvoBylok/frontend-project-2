@@ -1,6 +1,3 @@
-let addCountr = false;
-let remCountr = false;
-let remPoz = 0;
 const countries = [
   "United States",
   "China",
