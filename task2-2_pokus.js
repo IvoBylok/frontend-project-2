@@ -93,4 +93,5 @@ console.log(
   "Kontrolní výpis nového pole newCountries a jeho naplnění objekty splňujícími zadané podmínky."
 );
 controlListing(newCountries);
+//
 //END
